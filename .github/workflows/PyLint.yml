@@ -1,35 +1,18 @@
-name: PyLint
-
-on: [push, pull_request]
+on: pull_request
 
 jobs:
-  PEP8:
+  example:
     runs-on: ubuntu-latest
+    name: Executes pylint
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v1
 
-      - name: Setup Python
-        uses: actions/setup-python@v1
+- name: Pylint action
+  uses: gabriel-milan/action-pylint@v1
+
         with:
-          python-version: 3.10.9
-      - name: Install Python lint libraries
-        run: |
-          pip install autoflake isort black
-      - name: Remove unused imports and variables
-        run: |
-          autoflake --in-place --recursive --remove-all-unused-imports --ignore-init-module-imports .
-      - name: lint with isort
-        run: |
-          isort .
-      - name: lint with black
-        run: |
-          black .
-      # commit changes
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: 'Auto Fixes' 
-          commit_options: '--no-verify'
-          repository: .
-          commit_user_name: AnonymousX1025
-          commit_user_email: TheAnonymousX1025@gmail.com
-          commit_author: AnonymousX1025 <TheAnonymousX1025@gmail.com>
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}} # GitHub token
+          path: "./*.py" # Glob pattern for files to lint
+          fail: true # Fail the action if pylint errors are found
+          pr-message: true # Send a PR message if pylint errors are found
