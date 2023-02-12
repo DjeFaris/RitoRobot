@@ -71,7 +71,7 @@
       "BOT_USERNAME": {
          "description": "Fill Username Without @.",
          "required": true,
-         "value": "rito_robot
+         "value": "rito_robot"
       },
       "BOT_NAME": {
          "description": "Fill Bot Name.",
@@ -91,7 +91,7 @@
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to Fallen Support than consider you made an enemy.",
          "required": true,
-         "value": "RitoLog
+         "value": "jasa_kirito"
       },
       "TIME_API_KEY": {
          "description": "Required for timezone information. Get yours from https://timezonedb.com/api",
