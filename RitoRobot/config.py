@@ -18,7 +18,7 @@ class Config(object):
     
     DONATE_LINK = "https://link.dana.id/qr/68girf2p
 
-    SUPPORT_CHAT = "Ritosupport"  # Your Telegram support group chat username where your users will go and bother you
+    SUPPORT_CHAT = "Ritolog"  # Your Telegram support group chat username where your users will go and bother you
 
     TOKEN = ""  # Get bot token from @BotFather on Telegram
 
